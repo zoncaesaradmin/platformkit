@@ -1,5 +1,5 @@
 # Shared Module Makefile
-.PHONY: help build test clean deps fmt vet lint coverage coverage-html coverage-check coverage-enforce
+.PHONY: help build test clean deps fmt vet lint coverage coverage-html coverage-check coverage-enforce up down image integration ci dev benchmark race test-full
 
 # Go parameters
 GOCMD=go
@@ -125,6 +125,19 @@ lint:
 		echo "golangci-lint not found, skipping lint check"; \
 		echo "Install with: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest"; \
 	fi
+
+# Workspace contract targets
+up:
+	@echo "platformkit is a shared library repo; no long-running services to start"
+
+down:
+	@echo "platformkit is a shared library repo; no long-running services to stop"
+
+image:
+	@echo "platformkit does not publish a standalone container image"
+
+integration: test
+	@echo "platformkit integration checks completed"
 
 # CI pipeline
 ci: deps fmt vet test coverage-enforce

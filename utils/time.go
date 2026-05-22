@@ -1,15 +1,20 @@
 package utils
 
-import "time"
+import (
+	"corekit/timeutil"
+	"time"
+)
 
-const ISO8601Milli = "2006-01-02T15:04:05.000Z07:00"
+const ISO8601Milli = timeutil.ISO8601Milli
 
+// Deprecated: use corekit/timeutil.FormatUTCTimestampMilli.
 // FormatUTCTimestampMilli formats a time in UTC using millisecond precision.
 func FormatUTCTimestampMilli(t time.Time) string {
-	return t.UTC().Format(ISO8601Milli)
+	return timeutil.FormatUTCTimestampMilli(t)
 }
 
+// Deprecated: use corekit/timeutil.NowUTCTimestampMilli.
 // GetCurrentUTCTimestampMilli returns the current UTC timestamp with millisecond precision.
 func GetCurrentUTCTimestampMilli() string {
-	return FormatUTCTimestampMilli(time.Now())
+	return timeutil.NowUTCTimestampMilli()
 }

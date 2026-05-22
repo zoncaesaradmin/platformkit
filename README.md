@@ -1,6 +1,6 @@
 # Shared Module
 
-This module provides common functionality shared between the service and testrunner modules, with a focus on message bus implementations, logging, and utilities.
+This module provides common functionality shared between platform repos, with a focus on message bus implementations, logging, datastore integrations, and small reusable helper packages.
 
 ## Core Packages
 
@@ -20,16 +20,17 @@ This module provides common functionality shared between the service and testrun
 - **File/Console Output**: Configurable output targets
 - **Performance Optimized**: Zero-allocation logging
 
-### Utilities (`utils/`)
-- **Configuration**: YAML/ENV config management
-- **File Operations**: Safe file handling utilities
-- **Error Handling**: Common error types and helpers
-- **Testing Utilities**: Test helper functions
+### Config Helpers (`configutil/`)
+- **Configuration Files**: Resolve config locations and load YAML maps
 
-### Types (`types/`)
-- **Shared Models**: Common data structures
-- **Message Formats**: Standard message definitions
-- **Type Safety**: Go type checking for messages
+### Environment Helpers (`envutil/`)
+- **Environment Access**: Typed helpers for string, int, and bool env values
+
+### Filesystem Helpers (`fsutil/`)
+- **Filesystem Operations**: Safe directory setup utilities
+
+### Time Helpers (`timeutil/`)
+- **Timestamp Formatting**: UTC millisecond timestamp helpers
 
 ## Usage
 
@@ -38,8 +39,7 @@ This module provides common functionality shared between the service and testrun
 import (
     "corekit/messagebus"
     "corekit/logging"
-    "corekit/utils"
-    "corekit/types"
+    "corekit/configutil"
 )
 ```
 
@@ -113,18 +113,25 @@ make coverage-enforce
 - **Thread Safety**: Concurrent access supported
 - **Performance**: Zero-allocation where possible
 
+## Package Layout
+
+- Keep public, reusable packages at the repository root.
+- Move implementation-only helpers into `internal/` when they should not be imported by other repos.
+- Prefer focused helper packages like `configutil`, `envutil`, `fsutil`, and `timeutil` over growing a broad `utils` package.
+- The existing `utils` package remains as a compatibility layer and should not be the default choice for new code.
+
 ## Directory Structure
 ```
 corekit/
-├── messagebus/           # Message bus implementations
-│   ├── localbus.go      # Local file-based bus
-│   ├── kafkabus.go      # Kafka production bus
-│   └── mbinterfaces.go  # Common interfaces
+├── configstore/         # Config persistence interfaces and implementations
+├── configutil/          # Config file helpers
+├── ctxutil/             # Context metadata helpers
+├── datastore/           # OpenSearch and datastore abstractions
+├── envutil/             # Typed environment helpers
+├── fsutil/              # Filesystem helpers
+├── internal/            # Non-public implementation helpers
 ├── logging/             # Logging framework
-│   ├── logger.go       # Logger interface
-│   └── zerolog.go      # Zerolog implementation
-├── utils/              # Common utilities
-│   └── utils.go       # Utility functions
-└── types/             # Shared data types
-    └── types.go      # Common models
+├── messagebus/          # Message bus implementations
+├── timeutil/            # Time formatting helpers
+└── utils/               # Backward-compatible helper facade
 ```
