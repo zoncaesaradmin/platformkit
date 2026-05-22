@@ -4,7 +4,7 @@
 package datastore
 
 import (
-	"corekit/logging"
+	"platformkit/logging"
 	"io"
 	"net/http"
 	"net/http/httptest"

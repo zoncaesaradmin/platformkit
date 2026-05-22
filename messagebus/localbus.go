@@ -5,7 +5,7 @@ package messagebus
 
 import (
 	"context"
-	"corekit/internal/configmap"
+	"platformkit/internal/configmap"
 	"encoding/json"
 	"fmt"
 	"log"

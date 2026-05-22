@@ -3,7 +3,7 @@ package logging
 import (
 	"bytes"
 	"context"
-	"corekit/ctxutil"
+	"platformkit/ctxutil"
 	"errors"
 	"os"
 	"strings"

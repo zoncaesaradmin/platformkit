@@ -1,7 +1,7 @@
 package datastore
 
 import (
-	"corekit/configutil"
+	"platformkit/configutil"
 	"os"
 	"strings"
 )

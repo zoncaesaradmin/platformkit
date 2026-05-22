@@ -2,7 +2,7 @@ package logging
 
 import (
 	"context"
-	"corekit/ctxutil"
+	"platformkit/ctxutil"
 	"errors"
 	"testing"
 )

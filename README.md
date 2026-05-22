@@ -37,9 +37,9 @@ This module provides common functionality shared between platform repos, with a 
 ### Importing
 ```go
 import (
-    "corekit/messagebus"
-    "corekit/logging"
-    "corekit/configutil"
+    "platformkit/messagebus"
+    "platformkit/logging"
+    "platformkit/configutil"
 )
 ```
 
@@ -121,7 +121,7 @@ make coverage-enforce
 
 ## Directory Structure
 ```
-corekit/
+platformkit/
 ├── configstore/         # Config persistence interfaces and implementations
 ├── configutil/          # Config file helpers
 ├── ctxutil/             # Context metadata helpers

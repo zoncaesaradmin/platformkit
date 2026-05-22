@@ -5,8 +5,8 @@ package datastore
 
 import (
 	"context"
-	"corekit/configutil"
-	"corekit/logging"
+	"platformkit/configutil"
+	"platformkit/logging"
 	"crypto/tls"
 	"encoding/json"
 	"fmt"

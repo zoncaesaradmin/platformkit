@@ -2,7 +2,7 @@ package datastore
 
 import (
 	"context"
-	"corekit/logging"
+	"platformkit/logging"
 	"errors"
 )
 

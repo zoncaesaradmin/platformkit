@@ -1,6 +1,6 @@
 package messagebus
 
-import "corekit/internal/configmap"
+import "platformkit/internal/configmap"
 
 // GetStringValue safely gets a string value from config map with default.
 // Deprecated: use package-specific config handling; this wrapper remains for compatibility.
