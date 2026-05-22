@@ -118,7 +118,6 @@ make coverage-enforce
 - Keep public, reusable packages at the repository root.
 - Move implementation-only helpers into `internal/` when they should not be imported by other repos.
 - Prefer focused helper packages like `configutil`, `envutil`, `fsutil`, and `timeutil` over growing a broad `utils` package.
-- The existing `utils` package remains as a compatibility layer and should not be the default choice for new code.
 
 ## Directory Structure
 ```
@@ -133,5 +132,4 @@ corekit/
 ├── logging/             # Logging framework
 ├── messagebus/          # Message bus implementations
 ├── timeutil/            # Time formatting helpers
-└── utils/               # Backward-compatible helper facade
 ```
