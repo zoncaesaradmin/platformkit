@@ -3,7 +3,7 @@ package logging_test
 import (
 	"testing"
 
-	"platformkit/logging"
+	"github.com/zoncaesaradmin/platformkit/logging"
 )
 
 // TestMockLoggerUsage demonstrates how to use MockLogger in your tests

@@ -5,8 +5,8 @@ package datastore
 
 import (
 	"context"
-	"platformkit/configutil"
-	"platformkit/logging"
+	"github.com/zoncaesaradmin/platformkit/configutil"
+	"github.com/zoncaesaradmin/platformkit/logging"
 	"crypto/tls"
 	"encoding/json"
 	"fmt"

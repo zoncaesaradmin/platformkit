@@ -1,7 +1,7 @@
 package datastore
 
 import (
-	"platformkit/configutil"
+	"github.com/zoncaesaradmin/platformkit/configutil"
 	"os"
 	"strings"
 )

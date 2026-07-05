@@ -2,7 +2,7 @@ package logging
 
 import (
 	"context"
-	"platformkit/ctxutil"
+	"github.com/zoncaesaradmin/platformkit/ctxutil"
 	"fmt"
 	"strings"
 	"sync"

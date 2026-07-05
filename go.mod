@@ -1,4 +1,4 @@
-module platformkit
+module github.com/zoncaesaradmin/platformkit
 
 go 1.24
 

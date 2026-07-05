@@ -3,7 +3,7 @@ package logging
 import (
 	"bytes"
 	"context"
-	"platformkit/ctxutil"
+	"github.com/zoncaesaradmin/platformkit/ctxutil"
 	"errors"
 	"os"
 	"strings"

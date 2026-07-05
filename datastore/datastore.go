@@ -2,7 +2,7 @@ package datastore
 
 import (
 	"context"
-	"platformkit/logging"
+	"github.com/zoncaesaradmin/platformkit/logging"
 	"errors"
 )
 

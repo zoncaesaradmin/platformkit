@@ -5,7 +5,7 @@ package messagebus
 
 import (
 	"context"
-	"platformkit/internal/configmap"
+	"github.com/zoncaesaradmin/platformkit/internal/configmap"
 	"encoding/json"
 	"fmt"
 	"log"

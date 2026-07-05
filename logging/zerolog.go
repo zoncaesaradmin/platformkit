@@ -2,7 +2,7 @@ package logging
 
 import (
 	"context"
-	"platformkit/ctxutil"
+	"github.com/zoncaesaradmin/platformkit/ctxutil"
 	"fmt"
 	"io"
 	"os"
@@ -375,7 +375,7 @@ func findExternalCaller() (string, bool) {
 	frames := runtime.CallersFrames(programCounters[:frameCount])
 	for {
 		frame, more := frames.Next()
-		if !strings.Contains(frame.Function, "platformkit/logging.") {
+		if !strings.Contains(frame.Function, "github.com/zoncaesaradmin/platformkit/logging.") {
 			return fmt.Sprintf("%s:%d", filepath.Base(frame.File), frame.Line), true
 		}
 		if !more {

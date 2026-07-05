@@ -4,7 +4,7 @@
 package datastore
 
 import (
-	"platformkit/logging"
+	"github.com/zoncaesaradmin/platformkit/logging"
 	"io"
 	"net/http"
 	"net/http/httptest"
